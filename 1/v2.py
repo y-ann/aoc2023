@@ -9,38 +9,26 @@ def preprocess_lines() -> list[str]:
 
 
 DIGITS = {
-    "one": 1,
-    "two": 2,
-    "three": 3,
-    "four": 4,
-    "five": 5,
-    "six": 6,
-    "seven": 7,
-    "eight": 8,
-    "nine": 9,
+    "one": "1",
+    "two": "2",
+    "three": "3",
+    "four": "4",
+    "five": "5",
+    "six": "6",
+    "seven": "7",
+    "eight": "8",
+    "nine": "9",
 }
-
-
-def lfind_digit(input: str) -> Optional[int]:
-    digits = list(DIGITS.keys())
-    min_len = 3
-    max_len = 5
-    for i in range(min_len, max_len + 1):
-        substring = input[:i]
-        if substring in digits:
-            return DIGITS[substring]
-    return None
 
 
 def calibration_value(line: str) -> int:
     first_integer = None
     last_integer = None
-    for i, char in enumerate(line):
+    for k, v in DIGITS.items():
+        line = line.replace(k, v)
+    for char in line:
         if char.isdigit():
             int_digit = int(char)
-        else:
-            int_digit = lfind_digit(line[i:])
-        if int_digit:
             if first_integer is None:
                 first_integer = int_digit
             last_integer = int_digit
