@@ -21,13 +21,6 @@ DIGITS = {
 }
 
 
-def int_value(char: str) -> Optional[int]:
-    try:
-        return int(char)
-    except ValueError:
-        return None
-
-
 def lfind_digit(input: str) -> Optional[int]:
     digits = list(DIGITS.keys())
     min_len = 3
@@ -43,8 +36,9 @@ def calibration_value(line: str) -> int:
     first_integer = None
     last_integer = None
     for i, char in enumerate(line):
-        int_digit = int_value(char)
-        if int_digit is None:
+        if char.isdigit():
+            int_digit = int(char)
+        else:
             int_digit = lfind_digit(line[i:])
         if int_digit:
             if first_integer is None:
