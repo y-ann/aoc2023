@@ -8,7 +8,7 @@
             "name": "Day 1",
             "type": "python",
             "request": "launch",
-            "program": "1/main.py",
+            "program": "1/v2.py",
             "console": "integratedTerminal",
             "justMyCode": true
         }
