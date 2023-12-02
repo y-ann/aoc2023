@@ -2,7 +2,7 @@ from typing import Optional
 
 
 def preprocess_lines() -> list[str]:
-    with open("./1/input.txt") as f:
+    with open("./input.txt") as f:
         input = f.readlines()
     # Remove newline character
     return [line[:-1] for line in input]

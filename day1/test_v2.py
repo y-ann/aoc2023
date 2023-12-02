@@ -1,4 +1,4 @@
-from v2 import calibration_value, main
+from day1.part2 import calibration_value, main
 
 
 def test_calibration_value_with_two_digits():

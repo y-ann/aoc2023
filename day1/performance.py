@@ -1,5 +1,5 @@
 from timeit import timeit
-from v2 import preprocess_lines, sum_of_calibration_values
+from day1.part2 import preprocess_lines, sum_of_calibration_values
 
 
 if __name__ == "__main__":
