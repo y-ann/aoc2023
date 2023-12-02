@@ -1,4 +1,4 @@
-from v2 import calibration_value
+from v2 import calibration_value, main
 
 
 def test_calibration_value_with_two_digits():
@@ -19,3 +19,7 @@ def test_calibration_value_with_one_string_digit():
 
 def test_calibration_value_with_two_string_digit():
     assert calibration_value("eightfootwo") == 82
+
+
+def test_main_v2_gives_right_result():
+    assert main() == 55260
